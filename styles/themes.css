@@ -4,3 +4,75 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: #00cc14;
+    --page-weight: 465;
+    --header-weight: 785;
+    --header-bg:#000;
+    --accent-gradient-right: repeating-linear-gradient(
+        to right,
+        #000 , #000 2px,
+        transparent 2px, transparent 4px
+      );
+      --accent-gradient-bottom: repeating-linear-gradient(
+        to bottom,
+        #000 , #000 2px,
+        transparent 2px, transparent 4px
+      );
+      --accent-gradient-finish: repeating-linear-gradient(
+        to bottom,
+        #007f0c , #004306
+      );
+    
+  }
+
+}
+
+
+
+.theme-dark {
+  --accent-color: #00cc14;
+  --page-weight: 465;
+  --header-weight: 785;
+  --header-bg:#000;
+  --accent-gradient-right: repeating-linear-gradient(
+    to right,
+    #000 , #000 2px,
+    transparent 2px, transparent 4px
+  );
+  --accent-gradient-bottom: repeating-linear-gradient(
+    to bottom,
+    #000 , #000 2px,
+    transparent 2px, transparent 4px
+  );
+  --accent-gradient-finish: repeating-linear-gradient(
+    to bottom,
+    #007f0c , #004306
+  );
+  
+  
+}
+
+.theme-light {
+  --accent-color: #000;
+  --page-weight: 400;
+  --header-weight: 700;
+  --header-bg:#FFF;
+  --accent-gradient-right: repeating-linear-gradient(
+    to right,
+    #d3d3d3 , #d3d3d3 2px,
+    transparent 2px, transparent 4px
+  );
+  --accent-gradient-bottom: repeating-linear-gradient(
+    to bottom,
+    #d3d3d3 , #d3d3d3 2px,
+    transparent 2px, transparent 4px
+  );
+  --accent-gradient-finish: repeating-linear-gradient(
+    to bottom,
+    #e7e7e7 , #1a1a1a 
+  );
+
+}
