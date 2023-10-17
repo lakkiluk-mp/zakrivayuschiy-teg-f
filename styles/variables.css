@@ -1,27 +1,31 @@
 :root {
-  --major-font: "Inter";
-  --minor-font: "Press Start 2P";
+  --major-font: 'Inter';
+  --minor-font: 'Press Start 2P';
   --accent-color: #000;
   --page-weight: 400;
   --title-weight: 700;
-  --header-bg:#FFF;
+  --header-bg: #fff;
   --accent-gradient-right: repeating-linear-gradient(
     to right,
-    #d3d3d3 , #d3d3d3 2px,
-    transparent 2px, transparent 4px
+    #d3d3d3,
+    #d3d3d3 2px,
+    transparent 2px,
+    transparent 4px
   );
   --accent-gradient-bottom: repeating-linear-gradient(
     to bottom,
-    #d3d3d3 , #d3d3d3 2px,
-    transparent 2px, transparent 4px
+    #d3d3d3,
+    #d3d3d3 2px,
+    transparent 2px,
+    transparent 4px
   );
   --accent-gradient-finish: repeating-linear-gradient(
     to bottom,
-    #e7e7e7 , #1a1a1a 
+    #e7e7e7,
+    #1a1a1a
   );
-  --heart-color: #FF0000;
-  --heart-bg:transparent
-
+  --heart-color: #f00;
+  --heart-bg: transparent;
 }
 
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */

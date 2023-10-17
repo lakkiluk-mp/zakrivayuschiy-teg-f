@@ -111,7 +111,7 @@
     </main>
     <footer>
       <button
-        onclick="window['dialog-window'].show()"
+        onclick="window['dialog-window'].showModal()"
         class="card__safe-button button__card"
         type="button"
         aria-controls="dialog-window"
@@ -123,13 +123,18 @@
       </button>
     </footer>
     <dialog id="dialog-window" class="dialog">
-      <div>
-        <svg viewBox="0 0 28 28" class="diskette">
+      <div class="dialog_form">
+        <svg viewBox="0 0 28 28" class="diskette-2">
           <use href="./images/floppy.svg#diskette"></use>
         </svg>
         <h2 class="dialog__title">Вставьте дискету, чтобы продолжить</h2>
-        <button type="submit" class="dialog__button button__card"><span class="button__text">ОК</span></button>
       </div>
+
+      <form method="dialog">
+        <button class="dialog__button button__card">
+          <span class="button__text">ок</span>
+        </button>
+      </form>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>
