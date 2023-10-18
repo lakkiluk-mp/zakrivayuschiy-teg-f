@@ -224,6 +224,7 @@
 ) {
 
   .card-label {
+    mix-blend-mode: hard-light;
     -webkit-text-stroke: 1px var(--header-bg);
     /* stylelint-disable-next-line property-no-unknown */
     text-stroke: 1px var(--header-bg);
