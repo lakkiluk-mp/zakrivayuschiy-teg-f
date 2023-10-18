@@ -33,7 +33,7 @@
 }
 
 .header {
-  margin: 102px 0 0;
+  margin: 100px 0 0;
   min-block-size: 323px;
   display: flex;
   font-family: var(--minor-font, sans-serif);
@@ -49,7 +49,7 @@
 .main,
 .footer {
   inline-size: 100%;
-  max-inline-size: 696px;
+  max-inline-size: 700px;
 }
 
 .header__title-main {
@@ -68,9 +68,10 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 14px;
-  padding: 25px 0;
+  gap: 8px;
+  padding: 22px 0;
   font-size: 14px;
+  padding-left: 21px;
 }
 
 .theme-menu__button {
@@ -78,6 +79,7 @@
   padding: none;
   background-color: inherit;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .theme-menu__button:disabled {
@@ -103,19 +105,20 @@
   display: block;
   margin-top: 2px;
   height: 2px;
-  width: 0%;
+  inline-size: 0%;
   background-color: var(--accent-color);
   opacity: 0.6;
-  transition: width 0.3s;
+  transition: inline-size 0.3s;
 }
 
 .theme-menu__button:focus-visible:after {
-  width: 100%;
+  inline-size: 100%;
 }
 
 .theme-menu__button:disabled:before {
   position: absolute;
   content: '▶';
+  top: 2px;
 
   animation: loading 0.5s infinite alternate ease-in-out;
 }
@@ -123,16 +126,16 @@
 @keyframes loading {
 
   from {
-    left: -20px;
+    left: -17px;
   }
 
   to {
-    left: -16px;
+    left: -13px;
   }
 }
 
 .main {
-  margin-top: 104px;
+  margin-top: 100px;
 }
 
 .main__card {
@@ -147,29 +150,65 @@
   border: 2px solid var(--accent-color);
 }
 
+.main__list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .main__card-title {
   border-bottom: none;
   font-size: 18px;
-  padding: 0 10px;
+  padding: 4px 10px;
   font-variation-settings: 'wght' var(--title-weight);
 }
 
 .main__card-image-block {
   position: relative;
+  display: flex;
 }
 
 .card-img {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+.grey {
+  filter: grayscale(0.8);
+}
+
+.saturat {
+  filter: saturate(400%);
+}
+
+.hue {
+  filter: hue-rotate(45deg);
+}
+
+.invert {
+  filter: invert(0.9) opacity(0.7);
+}
+
+.sepia {
+  filter: sepia(80%);
+}
+
+.blur {
+  filter: blur(0.5rem);
+}
+
+.contrast {
+  filter: contrast(50%) hue-rotate(50deg);
+}
+
 .card-label {
+  z-index: 2;
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: clamp(1.375rem, 1.309rem + 0.2817vw, 1.5625rem);
+  right: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
   color: inherit;
   opacity: 0.5;
   font-size: 14px;
@@ -193,19 +232,24 @@
 }
 
 .main__card-page {
+  font-size: 18px;
+  line-height: 21px;
   border-top: none;
-  padding: 25px;
+  padding: 24px 25px;
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 25px;
   font-variation-settings: 'wght' var(--page-weight);
+}
+
+.main__card-page .main__card-page-item:nth-last-of-type(1) {
+  padding-top: 3px;
 }
 
 .main__card-buttons {
   display: flex;
   justify-content: end;
-
-  gap: 12px;
+  gap: 3px;
 }
 
 .card__icon-button,
@@ -255,8 +299,8 @@
 .button__card::before {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   background-color: var(--accent-color);
   transform: scaleX(0);
   transform-origin: left;
@@ -301,8 +345,9 @@
 }
 
 .card__safe-button {
-  margin: 54px 0 102px;
+  margin: 48px 0 100px;
   gap: 8px;
+  padding: 15px 21px;
 }
 
 .sparks {
@@ -417,24 +462,39 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-inline-size: 357px;
+  max-inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
   padding: 32px 41px;
   gap: 30px;
 }
 
-.dialog[open] .dialog_form {
+.dialog[open] .dialog__form {
   display: grid;
   grid-template-columns: min-content 2fr;
   gap: 20px;
   align-items: center;
-
 }
 
 .dialog .button__text {
   text-transform: uppercase;
 }
 
+.dialog .button__card {
+  inline-size: 100%;
+}
+
+.dialog__submit {
+  inline-size: 100%;
+}
+
 @media (width < 376px) {
+
+  .main__items:nth-child(1) .main__card-page {
+    padding: 23px 26px;
+  }
+
+  .main__items:nth-child(7) .main__card-page-item {
+    padding-right: 4px;
+  }
 
   .card__safe-button {
     flex-direction: column;
@@ -443,9 +503,5 @@
   .diskette {
     inline-size: 28px;
     block-size: 28px;
-  }
-
-  .dialog[open] {
-  max-inline-size: 341px;
   }
 }
