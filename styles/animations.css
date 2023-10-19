@@ -12,3 +12,89 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  transition: 0.3s 0.03s linear;
+}
+
+.main-body {
+  transition: 0.3s linear;
+}
+
+.heart:hover .main-body {
+  fill: var(--accent-color);
+  transition: 0.3s 0.05s linear;
+}
+
+.heart:hover .core {
+  fill: var(--accent-color);
+  transition: 0.3s linear;
+}
+
+.heart:active .main-body {
+  fill: var(--heart-color);
+  transition: 0.3s 0.05s linear;
+}
+
+.heart:active .core {
+  fill: var(--heart-color);
+  transition: 0.3s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-color);
+  transition: 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-color);
+  transition: 0.3s 0.05s linear;
+}
+
+.contour {
+  transition: 0.1s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-color);
+  transition: 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: boom 0.3s 0.1s alternate ease-in;
+  transform-origin: center;
+  animation-iteration-count: 2;
+}
+
+@keyframes boom {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.5;
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation: bem 0.3s 0.3s ease-in;
+  transform-origin: center;
+}
+
+@keyframes bem {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

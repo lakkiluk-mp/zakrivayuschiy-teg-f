@@ -36,11 +36,10 @@
   margin: 100px 0 0;
   min-block-size: 323px;
   display: flex;
-  font-family: var(--minor-font, sans-serif);
+  font-family: var(--minor-font, fantasy);
   align-items: center;
   flex-direction: column;
   background-color: var(--header-bg);
-
   text-transform: uppercase;
   border: 2px solid var(--accent-color);
 }
@@ -56,6 +55,7 @@
   padding-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   font-weight: 400;
+  text-decoration: none;
 }
 
 .header__title-minor {
@@ -84,7 +84,7 @@
 
 .theme-menu__button:disabled {
   position: relative;
-  content: '';
+  content: "";
   color: var(--accent-color);
   transition: 0.3s ease;
   opacity: 0.6;
@@ -98,10 +98,12 @@
 
 .theme-menu__button:focus {
   outline: none;
+  transition: 0.3s ease;
+  opacity: 0.6;
 }
 
 .theme-menu__button::after {
-  content: '';
+  content: "";
   display: block;
   margin-top: 2px;
   height: 2px;
@@ -117,14 +119,13 @@
 
 .theme-menu__button:disabled:before {
   position: absolute;
-  content: '▶';
+  content: "▶";
   top: 2px;
 
   animation: loading 0.5s infinite alternate ease-in-out;
 }
 
 @keyframes loading {
-
   from {
     left: -17px;
   }
@@ -160,7 +161,7 @@
   border-bottom: none;
   font-size: 18px;
   padding: 4px 10px;
-  font-variation-settings: 'wght' var(--title-weight);
+  font-variation-settings: "wght" var(--title-weight);
 }
 
 .main__card-image-block {
@@ -212,7 +213,7 @@
   color: inherit;
   opacity: 0.5;
   font-size: 14px;
-  font-family: var(--minor-font, sans-serif);
+  font-family: var(--minor-font, fantasy);
   font-weight: 400;
   text-shadow: -1px 0 var(--header-bg), 0 1px var(--header-bg),
     0 1px var(--header-bg), 0 -1px var(--header-bg);
@@ -222,7 +223,6 @@
   (text-stroke: 1px var(--header-bg)) or
     (-webkit-text-stroke: 1px var(--header-bg))
 ) {
-
   .card-label {
     mix-blend-mode: hard-light;
     -webkit-text-stroke: 1px var(--header-bg);
@@ -240,7 +240,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  font-variation-settings: 'wght' var(--page-weight);
+  font-variation-settings: "wght" var(--page-weight);
 }
 
 .main__card-page .main__card-page-item:nth-last-of-type(1) {
@@ -257,6 +257,7 @@
 .button__card {
   border: none;
   background-color: var(--header-bg);
+  cursor: pointer;
 }
 
 .button__card {
@@ -267,7 +268,7 @@
   padding: 9px 17px;
   border: 2px solid var(--accent-color);
   min-inline-size: 130px;
-  font-family: var(--minor-font, sans-serif);
+  font-family: var(--minor-font, fantasy);
   font-size: 14px;
 }
 
@@ -298,7 +299,7 @@
 }
 
 .button__card::before {
-  content: '';
+  content: "";
   position: absolute;
   inline-size: 100%;
   block-size: 100%;
@@ -351,96 +352,8 @@
   padding: 15px 21px;
 }
 
-.sparks {
-  opacity: 0;
-}
-
-.core {
-  transition: 0.3s 0.03s;
-}
-
-.main-body {
-  transition: 0.3s;
-}
-
-.heart:hover .main-body {
-  fill: var(--accent-color);
-  transition: 0.3s 0.05s;
-}
-
-.heart:hover .core {
-  fill: var(--accent-color);
-  transition: 0.3s;
-}
-
-.heart:active .main-body {
-  fill: var(--heart-color);
-  transition: 0.3s 0.05s;
-}
-
-.heart:active .core {
-  fill: var(--heart-color);
-  transition: 0.3s;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--heart-color);
-  transition: 0.3s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-color);
-  transition: 0.3s 0.05s;
-}
-
-.contour {
-  transition: 0.1s linear;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-color);
-  transition: 0.3s 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  animation: boom 0.3s 0.1s alternate ease-in;
-  transform-origin: center;
-  animation-iteration-count: 2;
-}
-
-@keyframes boom {
-
-  from {
-    scale: 1;
-  }
-
-  to {
-    scale: 1.5;
-  }
-}
-
-.like-icon.is-liked .sparks {
-  animation: bem 0.3s 0.3s ease-in;
-  transform-origin: center;
-}
-
-@keyframes bem {
-
-  from {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
 .dialog {
-  font-family: var(--minor-font, sans-serif);
+  font-family: var(--minor-font, fantasy);
   background-color: var(--header-bg);
   text-transform: uppercase;
   border: 2px solid var(--accent-color);
@@ -488,7 +401,6 @@
 }
 
 @media (width < 376px) {
-
   .main__items:nth-child(1) .main__card-page {
     padding: 23px 26px;
   }
